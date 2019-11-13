@@ -10937,39 +10937,16 @@ var _jquery = _interopRequireDefault(require("jquery"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function maxOf(arr) {
-  var max = 0;
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
-
-  try {
-    for (var _iterator = arr[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var e = _step.value;
-      if (e > max) max = e;
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator.return != null) {
-        _iterator.return();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
-
-  return max;
+  return arr.slice().sort(function (a, b) {
+    return b.value - a.value;
+  })[0].value;
 }
 
 function drawBarChart(data, options, element) {
   var $chartContainer = (0, _jquery.default)(element).addClass('chart-container');
   var max = maxOf(data);
   var normalized = data.map(function (e) {
-    return e / max;
+    return e.value / max;
   });
   var $chart = (0, _jquery.default)('<div class="chart"/>');
   var $bars = normalized.map(function (n) {
@@ -10986,17 +10963,35 @@ function drawBarChart(data, options, element) {
   });
   $yAxis.html($yTicks);
   var $xAxis = (0, _jquery.default)('<div class="x-axis"/>');
-  var xTicks = ['first', 'second', 'third', 'fourth'];
-  var $xTicks = xTicks.map(function (str) {
-    return (0, _jquery.default)("<div>".concat(str, "</div>"));
+  var $xTicks = data.map(function (e) {
+    return (0, _jquery.default)("<div>".concat(e.label, "</div>"));
   });
   $xAxis.html($xTicks);
   var $title = (0, _jquery.default)('<h1 class="title">My Title</h1>');
   $chartContainer.append($title, $chart, $yAxis, $xAxis);
 }
 
+var data = [{
+  value: 25,
+  label: 'first'
+}, {
+  value: 18,
+  label: 'second'
+}, {
+  value: 20,
+  label: 'third'
+}, {
+  value: 12,
+  label: 'fourth'
+}, {
+  value: 22,
+  label: 'fifth'
+}, {
+  value: 6,
+  label: 'sixth'
+}];
 (0, _jquery.default)(document).ready(function () {
-  return drawBarChart([25, 18.75, 12.5, 6.25], {}, '#root');
+  return drawBarChart(data, {}, '#root');
 });
 },{"jquery":"node_modules/jquery/dist/jquery.js"}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
