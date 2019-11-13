@@ -1,0 +1,21 @@
+.chart {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  background-color: grey;
+  height: 70px;
+  width: 150px;
+}
+
+.bar {
+  background-color: blue;
+  width: 20px;
+
+  &:nth-child(1) { height: 30px; }
+  &:nth-child(2) { height: 50px; }
+  &:nth-child(3) { height: 41px; }
+  &:nth-child(4) { height: 57px; }
+  &:nth-child(5) { height: 54px; }
+}
+

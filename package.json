@@ -1,0 +1,15 @@
+{
+  "name": "bar-chart",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Vincent-Carrier/bar-chart.git",
+  "author": "Vincent-Carrier <vincentcarrier15@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/jquery": "^3.3.31",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "sass": "^1.23.3"
+  }
+}

@@ -1,0 +1,31 @@
+.chart {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  background-color: grey;
+  height: 70px;
+  width: 150px;
+}
+
+.bar {
+  background-color: blue;
+  width: 20px;
+}
+.bar:nth-child(1) {
+  height: 30px;
+}
+.bar:nth-child(2) {
+  height: 50px;
+}
+.bar:nth-child(3) {
+  height: 41px;
+}
+.bar:nth-child(4) {
+  height: 57px;
+}
+.bar:nth-child(5) {
+  height: 54px;
+}
+
+/*# sourceMappingURL=/style.97fcb138.css.map */
