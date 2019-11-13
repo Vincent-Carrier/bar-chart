@@ -10966,19 +10966,37 @@ function maxOf(arr) {
 }
 
 function drawBarChart(data, options, element) {
+  var $chartContainer = (0, _jquery.default)(element).addClass('chart-container');
   var max = maxOf(data);
   var normalized = data.map(function (e) {
     return e / max;
   });
-  var $chart = (0, _jquery.default)(element).addClass('chart');
+  var $chart = (0, _jquery.default)('<div class="chart"/>');
   var $bars = normalized.map(function (n) {
-    return (0, _jquery.default)('<div class="bar"></div>').css('height', "".concat(n * 80, "%"));
+    return (0, _jquery.default)('<div class="bar"/>').height("".concat(n * 90, "%"));
   });
   $chart.html($bars);
+  var $yAxis = (0, _jquery.default)('<div class="y-axis"/>');
+  var step = max / 4;
+  var yTicks = [4, 3, 2, 1].map(function (n) {
+    return n * step;
+  });
+  var $yTicks = yTicks.map(function (n) {
+    return (0, _jquery.default)("<div>".concat(n, " -</div>"));
+  });
+  $yAxis.html($yTicks);
+  var $xAxis = (0, _jquery.default)('<div class="x-axis"/>');
+  var xTicks = ['first', 'second', 'third', 'fourth'];
+  var $xTicks = xTicks.map(function (str) {
+    return (0, _jquery.default)("<div>".concat(str, "</div>"));
+  });
+  $xAxis.html($xTicks);
+  var $title = (0, _jquery.default)('<h1 class="title">My Title</h1>');
+  $chartContainer.append($title, $chart, $yAxis, $xAxis);
 }
 
 (0, _jquery.default)(document).ready(function () {
-  return drawBarChart([1, 2, 3, 4, 5, 6, 3, 2, 1, 5, 2, 1], {}, "#root");
+  return drawBarChart([25, 18.75, 12.5, 6.25], {}, '#root');
 });
 },{"jquery":"node_modules/jquery/dist/jquery.js"}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

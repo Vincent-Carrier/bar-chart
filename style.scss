@@ -1,21 +1,64 @@
+.chart-container {
+  display: grid;
+  width: 500px;
+  height: 400px;
+  grid-template-areas:
+    "ly .  ti ti ti ti . "
+    "ya gr gr gr gr gr gr"
+    "ya gr gr gr gr gr gr"
+    "ya gr gr gr gr gr gr"
+    "ya gr gr gr gr gr gr"
+    ".  xa xa xa xa xa xa";
+  grid-auto-rows: repeat(6, 1fr);
+  grid-auto-columns: auto;
+}
+
+.title {
+  grid-area: ti
+}
+
+.y-label {
+  grid-area: ly
+}
+
+.x-label {
+  grid-area: lx
+}
+
+.y-axis {
+  grid-area: ya;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.x-axis {
+  grid-area: xa;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  & div {
+    width: 30px;
+    writing-mode: vertical-lr
+  }
+}
+
 .chart {
   display: flex;
+  grid-area: gr;
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-around;
-  background-color: grey;
-  height: 70px;
-  width: 150px;
+  background-color: #ddd;
+  border: 0 solid black;
+  border-width: 0 0 3px 3px;
+  box-sizing: content-box;
 }
 
 .bar {
   background-color: blue;
-  width: 20px;
-
-  &:nth-child(1) { height: 30px; }
-  &:nth-child(2) { height: 50px; }
-  &:nth-child(3) { height: 41px; }
-  &:nth-child(4) { height: 57px; }
-  &:nth-child(5) { height: 54px; }
+  width: 30px;
 }
 
