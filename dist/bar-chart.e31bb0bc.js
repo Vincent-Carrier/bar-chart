@@ -10943,6 +10943,15 @@ function maxOf(arr) {
 }
 
 function drawBarChart(data, options, element) {
+  if (_jquery.default.isNumeric(data[0])) {
+    data = data.map(function (e) {
+      return {
+        value: e,
+        label: ''
+      };
+    });
+  }
+
   var $chartContainer = (0, _jquery.default)(element).addClass('chart-container');
   var max = maxOf(data);
   var normalized = data.map(function (e) {
@@ -10990,8 +10999,9 @@ var data = [{
   value: 6,
   label: 'sixth'
 }];
+var options = {};
 (0, _jquery.default)(document).ready(function () {
-  return drawBarChart(data, {}, '#root');
+  return drawBarChart(data, options, '#root');
 });
 },{"jquery":"node_modules/jquery/dist/jquery.js"}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

@@ -5,6 +5,10 @@ function maxOf(arr) {
 }
 
 function drawBarChart(data, options, element) {
+  if ($.isNumeric(data[0])) {
+    data = data.map(e => ({value: e, label: ''}))
+  }
+
   const $chartContainer = $(element).addClass('chart-container')
 
   const max = maxOf(data)
@@ -39,6 +43,10 @@ const data = [
   {value: 6, label: 'sixth'},
 ]
 
+const options = {
+
+}
+
 $(document).ready(() =>
-  drawBarChart(data, {}, '#root')
+  drawBarChart(data, options, '#root')
 )
