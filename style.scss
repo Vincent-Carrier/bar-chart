@@ -3,7 +3,7 @@
   width: 500px;
   height: 600px;
   grid-template-areas:
-    "ly .  ti ti ti ti . "
+    "ly ti ti ti ti ti . "
     "ya gr gr gr gr gr gr"
     "ya gr gr gr gr gr gr"
     "ya gr gr gr gr gr gr"
@@ -11,9 +11,10 @@
     ".  xa xa xa xa xa xa";
   grid-auto-rows: repeat(6, 1fr);
   grid-auto-columns: auto;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-.title {
+.chart-title {
   grid-area: ti
 }
 
@@ -26,12 +27,12 @@
 }
 
 .y-axis {
-  padding-bottom: 36%; // magic number
   grid-area: ya;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-top: 10%
 }
 
 .x-axis {

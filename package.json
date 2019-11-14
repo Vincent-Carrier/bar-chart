@@ -6,10 +6,11 @@
   "author": "Vincent-Carrier <vincentcarrier15@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/jquery": "^3.3.31",
     "jquery": "^3.4.1"
   },
   "devDependencies": {
+    "@types/jquery": "^3.3.31",
+    "parcel": "^1.12.4",
     "sass": "^1.23.3"
   }
 }
