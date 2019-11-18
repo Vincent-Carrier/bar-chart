@@ -3,13 +3,14 @@ BarChart.js is a minimalist library for making HTML&CSS-based bar graphs. Its on
 
 Bar charts can easily be customized by passing an `options` object and/or by adding your own CSS.
 
-# Installation
+## Installation
 
 `npm install barchart` or `yarn add barchart`
 
-# Usage
+## Usage
 
 ```
+import $ from 'jquery'
 import { drawBarChart } from 'barchart'
 
 const revenue = [
@@ -24,10 +25,12 @@ const options = {
   height: '400px',
 }
 
-drawBarChart(revenue, options, '#my-chart')
+$(document).ready(() =>
+  drawBarChart(revenue, options, '#my-chart')
+)
 ```
 
 Result:
 
-# Building
+## Building
 You can preview the project by running `npm run dev` or `yarn dev`. It uses Parcel.js as its build tool.
