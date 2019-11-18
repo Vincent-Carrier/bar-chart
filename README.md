@@ -31,7 +31,7 @@ $(document).ready(() =>
 ```
 
 ## Screenshot
-<img src="https://github.com/Vincent-Carrier/bar-chart/blob/master/demo.png" width="500">
+![Bar chart example](/demo.png)
 
 ## Building
 You can preview the project by running `npm run dev` or `yarn dev`. It uses Parcel.js as its build tool.
